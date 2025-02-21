@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:prography
+    username: sa
+    password:
+  jpa:
+    open-in-view: false
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+springdoc:
+  api-docs:
+    path: /v3/api-docs  # OpenAPI 문서 경로
+  swagger-ui:
+    path: /swagger-ui.html  # Swagger UI URL
+    operationsSorter: method
+
+## 🔹 추가된 로깅 설정
+#logging:
+#  level:
+#    root: debug  # 전체 애플리케이션 로그 레벨을 debug로 설정
+#    org.springframework.web: debug  # Spring Web 관련 로그를 debug로 설정
+#    org.hibernate: debug  # Hibernate 쿼리 로그를 debug로 설정
+#
